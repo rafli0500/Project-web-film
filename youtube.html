@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Nonton Film</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/Qd4GZ0J.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: brightness(0.5);
+        }
+        .trailer-card {
+            background-color: #1f2937;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .film-card {
+            background-color: #2d3748;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #fbbf24;
+            transform: scale(1.1);
+        }
+        iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 0.5rem;
+        }
+        video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <header class="p-4 bg-gradient-to-r from-gray-800 to-gray-700 shadow-lg mb-5">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-yellow-400">🎬 Nonton Film</h1>
+            <nav>
+                <ul class="flex gap-4">
+                    <li><a href="#" class="nav-link hover:text-yellow-400">Home</a></li>
+                    <li><a href="#" class="nav-link hover:text-yellow-400">Movies</a></li>
+                    <li><a href="#" class="nav-link hover:text-yellow-400">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6" id="trailerContainer">
+            <!-- Trailer Cards -->
+        </div>
+        <!-- Full Movie Section -->
+       <div class="film-card">
+    <iframe id="fullMovie" src="https://www.youtube.com/embed/AqqC5oqgofU" 
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+    <div class="mt-2">
+        <h3 id="movieTitle" class="text-yellow-400">Kupu-Kupu Kertas</h3>
+        <p id="movieYear">Tahun Rilis: 2024</p>
+        <p id="moviePublisher">Penerbit: Maxima pictures</p>
+        <p id="movieDescription">"Kupu Kupu Kertas" tells the story of Ning, daughter of a PKI leader, and Ihsan, a young man from a Nahdlatul Ulama family, whose love is tested by the political turmoil of 1965 Indonesia. The film portrays their love story against the backdrop of escalating violence and ideological conflict, highlighting the tragic consequences of the 1965 events in Banyuwangi. 
+.</p>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-5 mt-10">
+        <div class="container mx-auto text-center">
+            <p>Dibuat oleh: Muhammad Rafli</p>
+            <p>© 2025 Web Nonton Film - All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fungsi untuk membuat card trailer dengan link YouTube
+        function createTrailerCard(title, youtubeUrl) {
+            return `
+            <div class="trailer-card shadow-lg transform transition duration-300 hover:scale-105">
+                <iframe src="${youtubeUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="card-body p-2 text-center">
+                    <h5 class="text-yellow-400">${title}</h5>
+                </div>
+            </div>`;
+        }
+
+        // Data trailer dengan link YouTube
+        const trailers = [
+            { title: 'Trailer 1', youtube: 'https://www.youtube.com/embed/zTbgNC42Ops' },
+            { title: 'Trailer 2', youtube: 'https://www.youtube.com/embed/KpfM-dd4aiQ' },
+            { title: 'Trailer 3', youtube: 'https://www.youtube.com/embed/mCFXvDeUoi0' },
+            { title: 'Trailer 4', youtube: 'https://www.youtube.com/embed/wJO_vIDZn-I' },
+            { title: 'Trailer 5', youtube: 'https://www.youtube.com/embed/cMhJ3uS01xY' },
+            { title: 'Trailer 6', youtube: 'https://www.youtube.com/embed/UWMzKXsY9A4' },
+            { title: 'Trailer 7', youtube: 'https://www.youtube.com/embed/0FSwsrFpkbw' },
+            { title: 'Trailer 8', youtube: 'https://www.youtube.com/embed/FSAz556s0fM' }
+        ];
+
+        const trailerContainer = document.getElementById('trailerContainer');
+        trailers.forEach(trailer => {
+            trailerContainer.innerHTML += createTrailerCard(trailer.title, trailer.youtube);
+        });
+    </script>
+</body>
+</html>
