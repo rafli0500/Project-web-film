@@ -1,6 +1,6 @@
-| Nama                    | NIM        | Kelas   | Matkul            |
-|-------------------------|------------|---------|-------------------|
-| Muhammad Rafli          | 312310420  | TI.23.A4| Pemrograman Web 1 |
+| Nama                    | NPM            | Kelas   | Matkul                       |
+|-------------------------|------------    |---------|------------------------------|
+| Muhammad Rafli          | 41182037240050 | Reg C   | Literasi teknologi informasi |
 
 
 screenshot web
